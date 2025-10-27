@@ -2,6 +2,11 @@
   "algorithm": "Kruskal",
   "mst_edges": [
     {
+      "from": "F",
+      "to": "G",
+      "weight": 6.9
+    },
+    {
       "from": "D",
       "to": "E",
       "weight": 7.8
@@ -17,14 +22,19 @@
       "weight": 9.5
     },
     {
+      "from": "C",
+      "to": "F",
+      "weight": 11.8
+    },
+    {
       "from": "A",
       "to": "C",
       "weight": 12.3
     }
   ],
-  "total_cost": 38.3,
-  "vertices": 5,
-  "edges": 7,
-  "operations": 78,
-  "execution_time_ms": 0.44525
+  "total_cost": 57.0,
+  "vertices": 7,
+  "edges": 14,
+  "operations": 175,
+  "execution_time_ms": 0.5615
 }

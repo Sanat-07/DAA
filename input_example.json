@@ -1,41 +1,80 @@
 {
-  "edges": [
+  "graphs": [
     {
-      "from": "District_A",
-      "to": "District_B",
-      "weight": 15.5
-    },
-    {
-      "from": "District_A",
-      "to": "District_C",
-      "weight": 12.3
-    },
-    {
-      "from": "District_B",
-      "to": "District_C",
-      "weight": 8.7
-    },
-    {
-      "from": "District_B",
-      "to": "District_D",
-      "weight": 22.1
-    },
-    {
-      "from": "District_C",
-      "to": "District_D",
-      "weight": 9.5
-    },
-    {
-      "from": "District_C",
-      "to": "District_E",
-      "weight": 18.2
-    },
-    {
-      "from": "District_D",
-      "to": "District_E",
-      "weight": 7.8
+      "id": 1,
+      "nodes": ["A", "B", "C", "D", "E", "F", "G"],
+      "edges": [
+        {
+          "from": "A",
+          "to": "B",
+          "weight": 15.5
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "weight": 12.3
+        },
+        {
+          "from": "A",
+          "to": "D",
+          "weight": 18.7
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "weight": 8.7
+        },
+        {
+          "from": "B",
+          "to": "D",
+          "weight": 22.1
+        },
+        {
+          "from": "B",
+          "to": "E",
+          "weight": 14.2
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "weight": 9.5
+        },
+        {
+          "from": "C",
+          "to": "E",
+          "weight": 18.2
+        },
+        {
+          "from": "C",
+          "to": "F",
+          "weight": 11.8
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "weight": 7.8
+        },
+        {
+          "from": "D",
+          "to": "F",
+          "weight": 16.4
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "weight": 13.1
+        },
+        {
+          "from": "E",
+          "to": "G",
+          "weight": 19.6
+        },
+        {
+          "from": "F",
+          "to": "G",
+          "weight": 6.9
+        }
+      ]
     }
   ]
 }
-
-
