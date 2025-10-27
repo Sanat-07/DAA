@@ -1,7 +1,7 @@
 public class Edge implements Comparable<Edge> {
-    private String from;
-    private String to;
-    private double weight;
+    public String from;
+    public String to;
+    public double weight;
 
     public Edge(String from, String to, double weight) {
         this.from = from;
@@ -28,7 +28,7 @@ public class Edge implements Comparable<Edge> {
 
     @Override
     public String toString() {
-        return from + "-" + to;
+        return from + "-" + to + ":" + weight;
     }
 
     @Override

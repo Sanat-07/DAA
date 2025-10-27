@@ -16,13 +16,13 @@ public class Prim {
         Map<String, List<Edge>> adj = new HashMap<>();
         for (String node : nodes) adj.put(node, new ArrayList<>());
         for (Edge e : edges) {
-            adj.get(e.getFrom()).add(e);
-            adj.get(e.getTo()).add(new Edge(e.getTo(), e.getFrom(), e.getWeight()));
+            adj.get(e.from).add(e);
+            adj.get(e.to).add(new Edge(e.to, e.from, e.weight));
         }
 
         Set<String> visited = new HashSet<>();
         List<Edge> mstEdges = new ArrayList<>();
-        PriorityQueue<Edge> pq = new PriorityQueue<>(Comparator.comparingDouble(e -> e.getWeight()));
+        PriorityQueue<Edge> pq = new PriorityQueue<>(Comparator.comparingDouble(e -> e.weight));
 
         String startNode = nodes.get(0);
         visited.add(startNode);
@@ -31,16 +31,16 @@ public class Prim {
         while (!pq.isEmpty() && visited.size() < nodes.size()) {
             Edge edge = pq.poll();
             operations++;
-            if (visited.contains(edge.getTo())) continue;
-            visited.add(edge.getTo());
+            if (visited.contains(edge.to)) continue;
+            visited.add(edge.to);
             mstEdges.add(edge);
-            for (Edge next : adj.get(edge.getTo())) {
-                if (!visited.contains(next.getTo())) pq.offer(next);
+            for (Edge next : adj.get(edge.to)) {
+                if (!visited.contains(next.to)) pq.offer(next);
             }
         }
 
         long end = System.nanoTime();
-        double totalCost = mstEdges.stream().mapToDouble(e -> e.getWeight()).sum();
+        double totalCost = mstEdges.stream().mapToDouble(e -> e.weight).sum();
         double execTimeMs = (end - start) / 1_000_000.0;
 
         return new MSTResult("Prim", mstEdges, totalCost, nodes.size(), edges.size(), operations, execTimeMs);

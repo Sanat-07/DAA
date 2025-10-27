@@ -13,22 +13,35 @@ public class Main {
         Prim prim = new Prim(nodes, edges);
         MSTResult primResult = prim.run();
         
-        writeOutputJson(primResult);
+        Kruskal kruskal = new Kruskal();
+        MSTResult kruskalResult = kruskal.run(nodes, edges);
         
-        System.out.println("========== Prim's Algorithm Results ==========");
-        System.out.println("Algorithm: " + primResult.getAlgorithm());
-        System.out.println("Total Cost: " + primResult.getTotalCost());
-        System.out.println("Vertices: " + primResult.getVertices());
-        System.out.println("Original Edges: " + primResult.getTotalEdges());
-        System.out.println("MST Edges: " + primResult.getEdges().size());
-        System.out.println("Operations: " + primResult.getOperations());
-        System.out.println("Execution Time: " + primResult.getTimeMs() + " ms");
-        System.out.println("\nMST Edges:");
-        for (Edge edge : primResult.getEdges()) {
-            System.out.println("  " + edge.getFrom() + " -> " + edge.getTo() + " (weight: " + edge.getWeight() + ")");
+        writeOutputJson(primResult, "output_prim.json");
+        writeOutputJson(kruskalResult, "output_kruskal.json");
+        
+        System.out.println("========== Algorithm Comparison Results ==========");
+        
+        System.out.println("\n🔵 Prim's Algorithm:");
+        printAlgorithmResult(primResult);
+        
+        System.out.println("\n🔴 Kruskal's Algorithm:");
+        printAlgorithmResult(kruskalResult);
+        
+        System.out.println("\n📊 Comparison:");
+        System.out.println("  Total Cost Match: " + (Math.abs(primResult.getTotalCost() - kruskalResult.getTotalCost()) < 0.001 ? "✅ YES" : "❌ NO"));
+        System.out.println("  Prim Time: " + primResult.getTimeMs() + " ms");
+        System.out.println("  Kruskal Time: " + kruskalResult.getTimeMs() + " ms");
+        System.out.println("  Prim Operations: " + primResult.getOperations());
+        System.out.println("  Kruskal Operations: " + kruskalResult.getOperations());
+        
+        if (primResult.getTimeMs() < kruskalResult.getTimeMs()) {
+            System.out.println("  🏆 Prim is " + String.format("%.2f", kruskalResult.getTimeMs() / primResult.getTimeMs()) + "x faster");
+        } else {
+            System.out.println("  🏆 Kruskal is " + String.format("%.2f", primResult.getTimeMs() / kruskalResult.getTimeMs()) + "x faster");
         }
-        System.out.println("=============================================");
-        System.out.println("✅ Results also saved to output.json");
+        
+        System.out.println("================================================");
+        System.out.println("✅ Results saved to output_prim.json and output_kruskal.json");
     }
     
     private static String readFile(String filename) throws IOException {
@@ -83,7 +96,21 @@ public class Main {
         return json.substring(start + searchStr.length(), end);
     }
     
-    private static void writeOutputJson(MSTResult result) throws IOException {
+    private static void printAlgorithmResult(MSTResult result) {
+        System.out.println("  Algorithm: " + result.getAlgorithm());
+        System.out.println("  Total Cost: " + result.getTotalCost());
+        System.out.println("  Vertices: " + result.getVertices());
+        System.out.println("  Original Edges: " + result.getTotalEdges());
+        System.out.println("  MST Edges: " + result.getEdges().size());
+        System.out.println("  Operations: " + result.getOperations());
+        System.out.println("  Execution Time: " + result.getTimeMs() + " ms");
+        System.out.println("  MST Edges:");
+        for (Edge edge : result.getEdges()) {
+            System.out.println("    " + edge.from + " -> " + edge.to + " (weight: " + edge.weight + ")");
+        }
+    }
+    
+    private static void writeOutputJson(MSTResult result, String filename) throws IOException {
         StringBuilder json = new StringBuilder();
         json.append("{\n");
         json.append("  \"algorithm\": \"").append(result.algorithm).append("\",\n");
@@ -92,9 +119,9 @@ public class Main {
         for (int i = 0; i < result.edges.size(); i++) {
             Edge edge = result.edges.get(i);
             json.append("    {\n");
-            json.append("      \"from\": \"").append(edge.getFrom()).append("\",\n");
-            json.append("      \"to\": \"").append(edge.getTo()).append("\",\n");
-            json.append("      \"weight\": ").append(edge.getWeight()).append("\n");
+            json.append("      \"from\": \"").append(edge.from).append("\",\n");
+            json.append("      \"to\": \"").append(edge.to).append("\",\n");
+            json.append("      \"weight\": ").append(edge.weight).append("\n");
             json.append("    }");
             if (i < result.edges.size() - 1) json.append(",");
             json.append("\n");
