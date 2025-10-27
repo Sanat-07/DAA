@@ -1,0 +1,30 @@
+{
+  "algorithm": "Prim",
+  "mst_edges": [
+    {
+      "from": "A",
+      "to": "C",
+      "weight": 12.3
+    },
+    {
+      "from": "C",
+      "to": "B",
+      "weight": 8.7
+    },
+    {
+      "from": "C",
+      "to": "D",
+      "weight": 9.5
+    },
+    {
+      "from": "D",
+      "to": "E",
+      "weight": 7.8
+    }
+  ],
+  "total_cost": 38.3,
+  "vertices": 5,
+  "edges": 7,
+  "operations": 4,
+  "execution_time_ms": 2.517834
+}

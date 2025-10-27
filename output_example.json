@@ -1,0 +1,32 @@
+{
+  "algorithm": "Prim",
+  "mst_edges": [
+    {
+      "from": "District_A",
+      "to": "District_C",
+      "weight": 12.3
+    },
+    {
+      "from": "District_C",
+      "to": "District_B",
+      "weight": 8.7
+    },
+    {
+      "from": "District_C",
+      "to": "District_D",
+      "weight": 9.5
+    },
+    {
+      "from": "District_D",
+      "to": "District_E",
+      "weight": 7.8
+    }
+  ],
+  "total_cost": 38.3,
+  "vertex_count": 5,
+  "edge_count": 7,
+  "operations": 150,
+  "execution_time_ms": 2
+}
+
+
