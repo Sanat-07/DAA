@@ -1,0 +1,179 @@
+{
+  "results": [
+    {
+      "graph_id": 1,
+      "vertices": 5,
+      "edges": 7,
+      "total_cost": 16,
+      "operations_count": 30,
+      "execution_time_ms": 1.3397,
+      "mst_edges": [
+        {
+          "from": "B",
+          "to": "C",
+          "weight": 2
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "weight": 3
+        },
+        {
+          "from": "B",
+          "to": "D",
+          "weight": 5
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "weight": 6
+        }
+      ]
+    },
+    {
+      "graph_id": 2,
+      "vertices": 4,
+      "edges": 5,
+      "total_cost": 6,
+      "operations_count": 22,
+      "execution_time_ms": 0.0145,
+      "mst_edges": [
+        {
+          "from": "A",
+          "to": "B",
+          "weight": 1
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "weight": 2
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "graph_id": 3,
+      "vertices": 6,
+      "edges": 7,
+      "total_cost": 20,
+      "operations_count": 32,
+      "execution_time_ms": 0.0122,
+      "mst_edges": [
+        {
+          "from": "A",
+          "to": "D",
+          "weight": 2
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "weight": 3
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "weight": 4
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "weight": 5
+        },
+        {
+          "from": "D",
+          "to": "F",
+          "weight": 6
+        }
+      ]
+    },
+    {
+      "graph_id": 4,
+      "vertices": 7,
+      "edges": 7,
+      "total_cost": 27,
+      "operations_count": 34,
+      "execution_time_ms": 0.0117,
+      "mst_edges": [
+        {
+          "from": "A",
+          "to": "B",
+          "weight": 2
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "weight": 3
+        },
+        {
+          "from": "B",
+          "to": "D",
+          "weight": 4
+        },
+        {
+          "from": "D",
+          "to": "F",
+          "weight": 5
+        },
+        {
+          "from": "C",
+          "to": "E",
+          "weight": 6
+        },
+        {
+          "from": "E",
+          "to": "G",
+          "weight": 7
+        }
+      ]
+    },
+    {
+      "graph_id": 5,
+      "vertices": 8,
+      "edges": 9,
+      "total_cost": 20,
+      "operations_count": 42,
+      "execution_time_ms": 0.0143,
+      "mst_edges": [
+        {
+          "from": "B",
+          "to": "D",
+          "weight": 1
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "weight": 2
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "weight": 2
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "weight": 3
+        },
+        {
+          "from": "G",
+          "to": "H",
+          "weight": 3
+        },
+        {
+          "from": "C",
+          "to": "E",
+          "weight": 4
+        },
+        {
+          "from": "F",
+          "to": "G",
+          "weight": 5
+        }
+      ]
+    }
+  ]
+}
